@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aemro Manaye | Portfolio</title>
+
+<style>
+/* EDIT COLORS HERE */
+:root {
+    --dark-blue: #06264b;
+    --blue: #075a86;
+    --cyan: #12c5f4;
+    --text-color: #10264a;
+    --page-bg: #f5f8fc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--page-bg);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+/* NAVIGATION */
+header {
+    background: var(--dark-blue);
+    color: white;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+}
+
+.logo span {
+    color: var(--cyan);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--cyan);
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(120deg, var(--dark-blue), var(--blue));
+    color: white;
+    padding: 55px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    flex-wrap: wrap;
+}
+
+.profile-photo {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 25%;
+    border: 5px solid white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 260px;
+}
+
+.welcome {
+    color: var(--cyan);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(34px, 5vw, 55px);
+    line-height: 1.25;
+    margin: 12px 0;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+}
+
+.hero h3 {
+    color: #c6edff;
+    font-size: 19px;
+}
+
+.hero p {
+    margin-top: 15px;
+    max-width: 600px;
+}
+
+/* SOCIAL MEDIA BUTTONS */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 30px;
+    text-decoration: none !important;
+    font-weight: bold;
+    font-size: 14px;
+    color: #ffffff !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    filter: brightness(1.1);
+}
+
+.social-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    display: block;
+}
+
+.btn-youtube { background: #FF0000; }
+.btn-telegram { background: #24A1DE; }
+.btn-linkedin { background: #0A66C2; }
+.btn-github { background: #24292e; }
+
+/* MAIN CONTENT */
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 35px 25px;
+}
+
+section {
+    scroll-margin-top: 20px;
+}
+
+.section-title {
+    margin-bottom: 12px;
+    font-size: 28px;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 25px;
+    align-items: stretch;
+    margin-bottom: 30px;
+}
+
+.card {
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+}
+
+.about-card {
+    background: white;
+}
+
+.about-card h2,
+.contact h2 {
+    color: #0863c5;
+}
+
+.quote {
+    background: #e5f2ff;
+    color: #174b88;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.quote p {
+    margin-top: 12px;
+    font-size: 15px;
+    font-style: normal;
+}
+
+/* SKILLS AND HOBBIES */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.skills {
+    background: #e5f8f0;
+}
+
+.skills h2 {
+    color: #078448;
+}
+
+.hobbies {
+    background: #f0eaff;
+}
+
+.hobbies h2 {
+    color: #7815ce;
+}
+
+ul {
+    padding-left: 25px;
+    margin-top: 12px;
+}
+
+li {
+    margin: 9px 0;
+}
+
+/* CONTACT */
+.contact {
+    background: #e2f1ff;
+    margin-bottom: 25px;
+}
+
+.contact h2 {
+    margin-bottom: 12px;
+}
+
+.contact a {
+    color: #0757aa;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+.contact-info {
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    margin: 6px 0;
+}
+
+/* FOOTER */
+footer {
+    background: var(--dark-blue);
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+footer span {
+    color: var(--cyan);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 700px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 40px 22px;
+        gap: 25px;
+    }
+
+    .profile-photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about,
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 25px 15px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+    <h2 class="logo">Aemro <span>Manaye</span></h2>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME / HERO -->
+<div class="hero" id="home">
+    <img src="Aemro.jpg" alt="My Profile Photo" class="profile-photo">
+
+    <div class="hero-content">
+        <p class="welcome">WELCOME TO MY WEBSITE</p>
+
+        <h1>Aemro <span>Manaye</span></h1>
+
+        <h3>ITE Student | Graphic Designer | Video Editor</h3>
+
+        <p>
+            I am passionate about technology, design,
+            and creating something meaningful.
+        </p>
+    </div>
+</div>
+
+<main>
+
+    <!-- ABOUT ME -->
+    <div class="about" id="about">
+
+        <section class="card about-card">
+            <h2 class="section-title">About Me</h2>
+
+            <p>
+                Hello! My name is Aemro Manaye.
+                I am an IT student and graphic designer.
+                I enjoy learning new technologies and
+                creating creative designs.
+            </p>
+        </section>
+
+        <div class="card quote">
+            <h2>“</h2>
+            <p>
+                Technology and creativity can change the world.
+            </p>
+            <p>— Aemro Manaye</p>
+        </div>
+
+    </div>
+
+    <!-- SKILLS AND HOBBIES -->
+    <div class="cards">
+
+        <section class="card skills" id="skills">
+            <h2 class="section-title">My Skills</h2>
+
+            <ul>
+                <li>HTML and Web Development</li>
+                <li>Graphic Design (Photoshop, Illustrator, Canva)</li>
+                <li>Video Editing (CapCut)</li>
+                <li>Logo and Poster Design</li>
+            </ul>
+        </section>
+
+        <section class="card hobbies" id="hobbies">
+            <h2 class="section-title">My Hobbies</h2>
+
+            <ul>
+                <li>Learning computer technology</li>
+                <li>Designing logos and posters</li>
+                <li>Watching educational videos</li>
+                <li>Exploring new software and tools</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <!-- CONTACT -->
+    <section class="card contact" id="contact">
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="contact-info">
+            <p>
+                <strong>Email:</strong>
+                <a href="mailto:aemromanie@gmail.com">aemromanie@gmail.com</a>
+            </p>
+            <p>
+                <strong>Location:</strong> Bahir Dar, Ethiopia
+            </p>
+        </div>
+
+        <h3 style="margin-top: 20px; margin-bottom: 12px; font-size: 18px; color: var(--dark-blue);">Connect with Me</h3>
+        <div class="social-links">
+            <a href="https://www.youtube.com/@Aemrographics" target="_blank" rel="noopener noreferrer" class="social-btn btn-youtube">
+                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                YouTube (Aemrographicsአርት)
+            </a>
+            <a href="https://t.me/aemromanaye" target="_blank" rel="noopener noreferrer" class="social-btn btn-telegram">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.949z"/></svg>
+                Telegram
+            </a>
+            <a href="https://www.linkedin.com/in/aemromanaye" target="_blank" rel="noopener noreferrer" class="social-btn btn-linkedin">
+                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                LinkedIn
+            </a>
+            <a href="https://github.com/aemromanaye" target="_blank" rel="noopener noreferrer" class="social-btn btn-github">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 Aemro Manaye. All rights reserved.</p>
+    <p><span>Personal Portfolio | HTML & CSS</span></p>
+</footer>
+
+</body>
+</html>
